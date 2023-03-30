@@ -17,7 +17,7 @@ with open("nem_vertanu.txt", "r", encoding="utf-8") as f:
 #print(len(vertanuk)
 igazi_vertanuk = []
 mondatok = {}
-with open("utolso_mondatok_utf.txt", "r", encoding="utf-8") as f:
+with open("utolso_mondatok.txt", "r", encoding="ansi") as f:
     for line in f:
         k, v = line.strip().split(":#")
         igazi_vertanuk.append(k)
