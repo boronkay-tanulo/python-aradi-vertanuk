@@ -32,14 +32,10 @@ while True:
     tmp = igazi_vertanuk.copy()
     kakukktojas = random.choice(vertanuk)
     for n in range(len(tmp)):
-        if kamu:
-            print(tmp.pop(random.randrange(0, len(tmp))))
-        else:
-            if random.randint(0, 100) <= 80:
-                print(tmp.pop(random.randrange(0, len(tmp))))
-            else:
-                print(kakukktojas, "#")
-                kamu = True
+        print(tmp.pop(random.randrange(0, len(tmp))))
+        if not kamu and random.randint(0, 99) >= 80:
+            print(kakukktojas, "#")
+            kamu = True
 
     if not kamu:
         print(kakukktojas)
@@ -55,11 +51,11 @@ while True:
         k = tmp.pop(random.randrange(0, len(tmp)))
         valaszok = igazi_vertanuk.copy()
         valaszok.remove(k)
-        for i in range(random.randint(4, len(igazi_vertanuk))):
+        for i in range(random.randint(4, len(valaszok))):
             if idezo:
                 print(valaszok.pop(random.randrange(0, len(valaszok))))
             else:
-                if random.randint(0, 100) <= 80:
+                if random.randint(0, 99) < 80:
                     print(valaszok.pop(random.randrange(0, len(valaszok))))
                 else:
                     print(k, "#")
